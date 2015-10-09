@@ -7,6 +7,6 @@ Just include the library (less than 1kB!):
 Then use the following elements:
 
 - `<textarea>` or `<input>` with the class `text-to-copy`
-- a button with the class `js-copy-btn`
+- `<button>` with the class `js-copy-btn`
 
 The library takes cares of the rest. :shipit:
