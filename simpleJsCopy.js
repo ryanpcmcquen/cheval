@@ -13,12 +13,12 @@
             // now that we've selected the text, execute the copy command
             var successful = document.execCommand('copy');
             if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
-                document.getElementsByClassName('js-copy-btn')[0].textContent = "Now click 'Copy'";
+                copyBtn.textContent = "Now click 'Copy'";
             } else {
-                document.getElementsByClassName('js-copy-btn')[0].textContent = "Copied!";
+                copyBtn.textContent = "Copied!";
             }
         } catch (err) {
-            document.getElementsByClassName('js-copy-btn')[0].textContent = "Epic fail!";
+            copyBtn.textContent = "Epic fail!";
         }
         var selection = window.getSelection();
         range.selectNodeContents(copyItem);
