@@ -10,3 +10,22 @@ Then use the following elements:
 2. `<button>` with the class `js-copy-btn`
 
 The library takes cares of the rest. :shipit:
+
+#### So what?! Where does it work?
+
+Almost everywhere!
+
+Current versions (Desktop):
+
+- Chrome
+- Firefox
+- Internet Explorer
+- Safari
+
+Current versions (Android):
+
+- Chrome
+- Firefox
+
+
+Everywhere else (meaning iOS), it will select the text, and in iOS 9+ that will cause the 'Copy' dialog to pop up.
