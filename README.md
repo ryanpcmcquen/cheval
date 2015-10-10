@@ -20,7 +20,6 @@ Current versions (Desktop):
 - Chrome
 - Firefox
 - Internet Explorer
-- Safari
 
 Current versions (Android):
 
@@ -28,4 +27,6 @@ Current versions (Android):
 - Firefox
 
 
-Everywhere else (meaning iOS), it will select the text, and in iOS 9+ that will cause the 'Copy' dialog to pop up.
+Everywhere else (meaning iOS), it will select the text, and in iOS 9+ that will cause the 'Copy' dialog to pop up (the library detects iDevices and will say `Now click 'Copy'` instead of `Copied!` on iOS).
+
+The next release will say, now press Command+C to copy on Desktop Safari.
