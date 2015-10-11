@@ -15,18 +15,20 @@ The library takes cares of the rest. :shipit:
 
 Almost everywhere!
 
-Current versions (Desktop):
+Desktop:
 
-- Chrome
-- Firefox
-- Internet Explorer
+- Chrome/Chromium 42+
+- Firefox 41+
+- Internet Explorer 9+
+- Opera 29+
 
-Current versions (Android):
+Android:
 
-- Chrome
-- Firefox
+- Chrome 42+
+- Firefox 41+
 
+##### What about other browsers?
 
 Everywhere else (meaning iOS), it will select the text, and in iOS 9+ that will cause the 'Copy' dialog to pop up (the library detects iDevices and will say `Now click 'Copy'` instead of `Copied!` on iOS).
 
-On desktop Safari, the button will change to `Press Command + C to copy`.
+On desktop Safari (any version), the button will change to `Press Command + C to copy`.
