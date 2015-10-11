@@ -14,7 +14,11 @@
             var successful = document.execCommand('copy');
             if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
                 copyBtn.textContent = "Now click 'Copy'";
-            } else {
+            } else if (/^((?!chrome).)*safari/i.test(navigator.userAgent)) {
+                // fancy safari detection thanks to: http://stackoverflow.com/a/23522755
+                copyBtn.textContent = "Now press Command + C to copy";
+            } 
+            else {
                 copyBtn.textContent = "Copied!";
             }
         } catch (err) {
