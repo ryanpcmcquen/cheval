@@ -1,8 +1,8 @@
 # simpleJsCopy :clipboard:
 
-Just include the library (less than 1kB!):
+Just include the library (`v0.1.1`, under 1kB!):
 
-    //cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/1291eca27e4315adccbef2eae85b5d58af924614/simpleJsCopy.min.js
+    //cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/bd9240aa9a0fbcdebebdefa6c0ba0185f7a36d51/simpleJsCopy.min.js
 
 Then use the following elements:
 
