@@ -16,7 +16,7 @@
                 copyBtn.textContent = "Now click 'Copy'";
             } else if (/^((?!chrome).)*safari/i.test(navigator.userAgent)) {
                 // fancy safari detection thanks to: http://stackoverflow.com/a/23522755
-                copyBtn.textContent = "Now press Command + C to copy";
+                copyBtn.textContent = "Press Command + C to copy";
             } 
             else {
                 copyBtn.textContent = "Copied!";
