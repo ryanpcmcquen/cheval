@@ -29,4 +29,4 @@ Current versions (Android):
 
 Everywhere else (meaning iOS), it will select the text, and in iOS 9+ that will cause the 'Copy' dialog to pop up (the library detects iDevices and will say `Now click 'Copy'` instead of `Copied!` on iOS).
 
-The next release will say, now press Command+C to copy on Desktop Safari.
+On desktop Safari, the button will change to `Press Command + C to copy`.
