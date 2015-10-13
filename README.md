@@ -6,7 +6,7 @@ Just include the library (`v0.1.1`, under 1kB!):
 
 Then use the following elements:
 
-1. `<textarea>` or `<input>` with the class `text-to-copy`
+1. `<textarea>` with the class `text-to-copy`
 2. `<button>` with the class `js-copy-btn`
 
 The library takes cares of the rest. :shipit:
@@ -29,6 +29,9 @@ Android:
 
 ##### What about other browsers?
 
-Everywhere else (meaning iOS), it will select the text, and in iOS 9+ that will cause the 'Copy' dialog to pop up (the library detects iDevices and will say `Now click 'Copy'` instead of `Copied!` on iOS).
+Everywhere else (meaning iOS), it will select the text. The library detects iDevices and will say either `Now tap 'Copy'` (iPhone) or `Now tap the text, then 'Copy'` (iPad), to account for the strange behavioral differences of these devices.
 
 On desktop Safari (any version), the button will change to `Press Command + C to copy`.
+
+On failure the button will say `Please copy manually`.
+
