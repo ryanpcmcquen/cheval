@@ -6,10 +6,12 @@ Just include the library (`v0.1.3`, under 1kB!):
 
 Then use the following elements:
 
-1. `<textarea>` with the class `text-to-copy`
+1. `<textarea>` with the class `text-to-copy` (can be `readonly` but *not* `disabled`)
 2. `<button>` with the class `js-copy-btn`
 
 The library takes cares of the rest. :shipit:
+
+:newspaper: You don't have to write any JavaScript to use it!
 
 :warning: If you want your textarea to be invisible for some reason, use this CSS:
 
