@@ -13,14 +13,43 @@ The library takes cares of the rest. :shipit:
 
 :newspaper: You don't have to write any JavaScript to use it!
 
+=====
+
 :warning: If you want your textarea to be invisible for some reason, use this CSS:
 
-    .text-to-copy {
-      opacity: 0;
-      position: absolute;
-    }
+```css
+.text-to-copy {
+  opacity: 0;
+  position: absolute;
+}
+```
 
 Because it will not work with `display: none;` or `visibility: hidden;`. :thumbsup:
+
+Note that you should also supplement that CSS with something like this helper library, otherwise people on iOS will not be able to copy at all since Safari doesn't support cool stuff:
+
+https://gist.github.com/ryanpcmcquen/1229119ffcf5098543c0
+
+```javascript
+(function() {
+  window.addEventListener('load', function() {
+    var copyItem = document.querySelector('.text-to-copy');
+    if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+      copyItem.style.opacity = 1;
+      copyItem.style.position = "relative";
+    } else if (navigator.userAgent.match(/iPad/i)) {
+      copyItem.style.opacity = 1;
+      copyItem.style.position = "relative";
+    } else if (/^((?!chrome).)*safari/i.test(navigator.userAgent)) {
+      // fancy safari detection thanks to: http://stackoverflow.com/a/23522755
+      copyItem.style.opacity = 1;
+      copyItem.style.position = "relative";
+    }
+  });
+}());
+```
+
+=====
 
 #### So what?! Where does it work?
 
