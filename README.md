@@ -1,8 +1,8 @@
 # simpleJsCopy :clipboard:
 
-Just include the library (`v0.1.2`, under 1kB!):
+Just include the library (`v0.1.3`, under 1kB!):
 
-    //cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/47534754a9219762ecbf18224afe86a04bf83979/simpleJsCopy.min.js
+    //cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/99fefdbfcb344441c8ebcc8a41f11b6105b4e412/simpleJsCopy.min.js
 
 Then use the following elements:
 
@@ -10,6 +10,15 @@ Then use the following elements:
 2. `<button>` with the class `js-copy-btn`
 
 The library takes cares of the rest. :shipit:
+
+:warning: If you want your textarea to be invisible for some reason, use this CSS:
+
+    .text-to-copy {
+      opacity: 0;
+      position: absolute;
+    }
+
+Because it will not work with `display: none;` or `visibility: hidden;`. :thumbsup:
 
 #### So what?! Where does it work?
 
