@@ -33,7 +33,7 @@
         } else {
           copyBtn.textContent = "Copied!";
         }
-      } catch (err) {
+      } catch (ignore) {
         copyBtn.textContent = "Please copy manually";
       }
       // this is what selects it on iOS
