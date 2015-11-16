@@ -1,4 +1,4 @@
-/* simpleJsCopy.js v0.1.3 by @ryanpcmcquen */
+/* simpleJsCopy.js v0.1.4 by @ryanpcmcquen */
 
 /*global window*/
 /*jslint browser:true, white:true*/
@@ -11,7 +11,7 @@
   // - the button instructs the user if necessary
   window.addEventListener('load', function() {
     var copyBtn = document.querySelector('.js-copy-btn');
-    copyBtn.addEventListener('click', function(event) {
+    copyBtn.addEventListener('click', function() {
       // select the text
       var copyItem = document.querySelector('.text-to-copy');
       var range = document.createRange();
@@ -19,7 +19,8 @@
       window.getSelection().addRange(range);
       try {
         // now that we've selected the text, execute the copy command
-        var successful = document.execCommand('copy');
+        document.execCommand('removeFormat');
+        document.execCommand('copy');
         if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
           copyBtn.textContent = "Now tap 'Copy'";
         } else if (navigator.userAgent.match(/iPad/i)) {
@@ -44,3 +45,4 @@
     });
   });
 }());
+
