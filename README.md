@@ -33,7 +33,7 @@ Android:
 
 ##### What about other browsers?
 
-Everywhere else (meaning iOS), it will select the text. The library detects iDevices and will say either `Now tap 'Copy'` (iPhone) or `Now tap the text, then 'Copy'` (iPad), to account for the strange behavioral differences of these devices.
+Everywhere else (meaning iOS), it will select the text. The library detects iDevices and will change the inital button text to `Select text` (to avoid confusing the user). After clicking it will say either `Now tap 'Copy'` (iPhone) or `Now tap the text, then 'Copy'` (iPad), to account for the strange behavioral differences of these devices.
 
 On desktop Safari (any version), the button will change to `Press Command + C to copy`.
 
