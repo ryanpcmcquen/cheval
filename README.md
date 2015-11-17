@@ -56,21 +56,3 @@ Note that you should also supplement that CSS with something like this helper li
 
 https://gist.github.com/ryanpcmcquen/1229119ffcf5098543c0
 
-```javascript
-(function() {
-  window.addEventListener('load', function() {
-    var copyItem = document.querySelector('.text-to-copy');
-    if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-      copyItem.style.opacity = 1;
-      copyItem.style.position = "relative";
-    } else if (navigator.userAgent.match(/iPad/i)) {
-      copyItem.style.opacity = 1;
-      copyItem.style.position = "relative";
-    } else if (/^((?!chrome).)*safari/i.test(navigator.userAgent)) {
-      // fancy safari detection thanks to: http://stackoverflow.com/a/23522755
-      copyItem.style.opacity = 1;
-      copyItem.style.position = "relative";
-    }
-  });
-}());
-```
