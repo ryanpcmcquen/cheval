@@ -1,6 +1,6 @@
 # simpleJsCopy :clipboard:
 
-Just include the library (`v0.1.3`, under 1kB!):
+Just include the library (`v0.2.0`, under 1kB!):
 
     //cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/eb7fcfd94ed9988ed5099b6e9c1cb42f701ac32a/simpleJsCopy.min.js
 
