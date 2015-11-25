@@ -2,7 +2,9 @@
 
 Just include the library (`v0.2.1`, under 1kB!):
 
-    //cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/59f775d1b1d0236710b49c227047835da2c60758/simpleJsCopy.min.js
+    <script src="https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/59f775d1b1d0236710b49c227047835da2c60758/simpleJsCopy.min.js"></script>
+
+https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/59f775d1b1d0236710b49c227047835da2c60758/simpleJsCopy.min.js
 
 Then use the following elements:
 
