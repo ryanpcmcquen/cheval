@@ -1,4 +1,4 @@
-/* simpleJsCopy.js v0.2.1 by @ryanpcmcquen */
+/*! simpleJsCopy.js v0.2.2 by @ryanpcmcquen */
 
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
@@ -23,29 +23,40 @@
 /*global window*/
 /*jslint browser:true, white:true*/
 
-(function() {
+(function () {
   'use strict';
   // a stupidly simple copy button
   // - copies on awesome browsers/devices
   // - selects text on underwhelming mobile devices
   // - the button instructs the user if necessary
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     var copyBtn = document.querySelector('.js-copy-btn');
+    var setCopyBtnText = function (textToSet) {
+      copyBtn.textContent = textToSet;
+    };
+    var throwErr = function (err) {
+      throw {
+        name: "Error",
+        message: err
+      };
+    };
     var iPhoneORiPod = false,
       iPad = false,
       safari = false;
-    if (navigator.userAgent.match(/iPhone|iPod/i)) {
+    var navAgent = navigator.userAgent;
+    if (navAgent.match(/iPhone|iPod/i)) {
       iPhoneORiPod = true;
-    } else if (navigator.userAgent.match(/iPad/i)) {
+    } else if (navAgent.match(/iPad/i)) {
       iPad = true;
-    } else if (/^((?!chrome).)*safari/i.test(navigator.userAgent)) {
+    } else if (/^((?!chrome).)*safari/i.test(navAgent)) {
+      // ^ fancy safari detection thanks to: https://stackoverflow.com/a/23522755
       safari = true;
     }
     if (iPhoneORiPod || iPad || safari) {
-      copyBtn.textContent = "Select text";
+      setCopyBtnText("Select text");
     }
     if (copyBtn) {
-      copyBtn.addEventListener('click', function() {
+      copyBtn.addEventListener('click', function () {
         // select the text
         var copyItem = document.querySelector('.text-to-copy');
         if (copyItem) {
@@ -54,19 +65,18 @@
             // now that we've selected the text, execute the copy command
             document.execCommand('copy');
             if (iPhoneORiPod) {
-              copyBtn.textContent = "Now tap 'Copy'";
+              setCopyBtnText("Now tap 'Copy'");
             } else if (iPad) {
               // the iPad doesn't have the 'Copy' box pop up,
               // you have to tap the text first
-              copyBtn.textContent = "Now tap the text, then 'Copy'";
+              setCopyBtnText("Now tap the text, then 'Copy'");
             } else if (safari) {
-              // fancy safari detection thanks to: http://stackoverflow.com/a/23522755
-              copyBtn.textContent = "Press Command + C to copy";
+              setCopyBtnText("Press Command + C to copy");
             } else {
-              copyBtn.textContent = "Copied!";
+              setCopyBtnText("Copied!");
             }
           } catch (ignore) {
-            copyBtn.textContent = "Please copy manually";
+            setCopyBtnText("Please copy manually");
           }
           // this is what selects it on iOS
           copyItem.focus();
@@ -76,16 +86,14 @@
           } else {
             copyItem.select();
           }
-
           // disable the button because clicking it again could cause madness
           copyBtn.disabled = true;
         } else {
-          throw new Error("You don't have a <textarea> with the class: 'text-to-copy'. Please check the simpleJsCopy README.");
+          throwErr("You don't have a <textarea> with the class: 'text-to-copy'. Please check the simpleJsCopy README.");
         }
       });
     } else {
-      throw new Error("You don't have a <button> with the class: 'js-copy-btn'. Please check the simpleJsCopy README.");
+      throwErr("You don't have a <button> with the class: 'js-copy-btn'. Please check the simpleJsCopy README.");
     }
   });
 }());
-
