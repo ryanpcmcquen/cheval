@@ -1,4 +1,4 @@
-/*! simpleJsCopy.js v0.2.3 by @ryanpcmcquen */
+/*! simpleJsCopy.js v0.2.3 by ryanpcmcquen */
 
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
