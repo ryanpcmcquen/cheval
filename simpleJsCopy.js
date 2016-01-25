@@ -1,4 +1,4 @@
-/*! simpleJsCopy.js v0.2.2 by @ryanpcmcquen */
+/*! simpleJsCopy.js v0.2.3 by @ryanpcmcquen */
 
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
@@ -35,10 +35,7 @@
       copyBtn.textContent = textToSet;
     };
     var throwErr = function (err) {
-      throw {
-        name: "Error",
-        message: err
-      };
+      throw new Error(err);
     };
     var iPhoneORiPod = false,
       iPad = false,
