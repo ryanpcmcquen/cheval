@@ -1,4 +1,4 @@
-/*! simpleJsCopy.js v0.2.3 by ryanpcmcquen */
+/*! simpleJsCopy.js v0.3.0 by ryanpcmcquen */
 
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
@@ -29,7 +29,7 @@
   // - copies on awesome browsers/devices
   // - selects text on underwhelming mobile devices
   // - the button instructs the user if necessary
-  window.addEventListener('load', function () {
+  var simpleJsCopy = function () {
     var copyBtn = document.querySelector('.js-copy-btn');
     var setCopyBtnText = function (textToSet) {
       copyBtn.textContent = textToSet;
@@ -54,10 +54,17 @@
     }
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
-        // select the text
-        var copyItem = document.querySelector('.text-to-copy');
+        var dollyTheSheep = document.querySelector('.text-to-copy').cloneNode(false);
+        var copyItem = document.createElement('textarea');
+        copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
+        copyItem.style.opacity = 0;
+        copyItem.style.position = "absolute";
+        // copyItem.style.zIndex = "-1";
+        document.body.appendChild(copyItem);
         if (copyItem) {
+          // select the text
           copyItem.select();
+          // document.execCommand('selectAll');
           try {
             // now that we've selected the text, execute the copy command
             document.execCommand('copy');
@@ -85,12 +92,14 @@
           }
           // disable the button because clicking it again could cause madness
           copyBtn.disabled = true;
+          copyItem.remove();
         } else {
-          throwErr("You don't have a <textarea> with the class: 'text-to-copy'. Please check the simpleJsCopy README.");
+          throwErr("You don't have an element with the class: 'text-to-copy'. Please check the simpleJsCopy README.");
         }
       });
     } else {
       throwErr("You don't have a <button> with the class: 'js-copy-btn'. Please check the simpleJsCopy README.");
     }
-  });
+  };
+  window.addEventListener('load', simpleJsCopy);
 }());
