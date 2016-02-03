@@ -54,17 +54,19 @@
     }
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
-        var dollyTheSheep = document.querySelector('.text-to-copy').cloneNode(false);
+        // clone the text-to-copy node so that we can create a fake textarea,
+        // with its text value
+        var dollyTheSheep = document.querySelector('.text-to-copy').cloneNode(true);
         var copyItem = document.createElement('textarea');
+        // in case value is undefined, textContent will get assigned to
+        // the textarea we made
         copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
         copyItem.style.opacity = 0;
         copyItem.style.position = "absolute";
-        // copyItem.style.zIndex = "-1";
         document.body.appendChild(copyItem);
         if (copyItem) {
           // select the text
           copyItem.select();
-          // document.execCommand('selectAll');
           try {
             // now that we've selected the text, execute the copy command
             document.execCommand('copy');
