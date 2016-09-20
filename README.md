@@ -27,6 +27,7 @@ Desktop:
 - Firefox 41+
 - Internet Explorer 9+
 - Opera 29+
+- Safari 10+ (Coming soon!)
 
 Android:
 
