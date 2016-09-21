@@ -25,10 +25,10 @@
 
 (function () {
   'use strict';
-  // a stupidly simple copy button
-  // - copies on awesome browsers/devices
-  // - selects text on underwhelming mobile devices
-  // - the button instructs the user if necessary
+  // A simple copy button:
+  // - Copies on awesome browsers/devices.
+  // - Selects text on underwhelming mobile devices.
+  // - The button instructs the user if necessary.
   var simpleJsCopy = function () {
     var copyBtn = document.querySelector('.js-copy-btn');
     var setCopyBtnText = function (textToSet) {
@@ -39,45 +39,48 @@
     };
     var iPhoneORiPod = false,
       iPad = false,
-      safari = false;
+      oldSafari = false;
     var navAgent = navigator.userAgent;
     if (navAgent.match(/iPhone|iPod/i)) {
       iPhoneORiPod = true;
     } else if (navAgent.match(/iPad/i)) {
       iPad = true;
     } else if (/^((?!chrome).)*safari/i.test(navAgent)) {
-      // ^ fancy safari detection thanks to: https://stackoverflow.com/a/23522755
-      safari = true;
+      // ^ Fancy safari detection thanks to: https://stackoverflow.com/a/23522755
+      (navigator.userAgent.match(/^((?!chrome).)*[0-9][0-9](\.[0-9][0-9]?)?\ssafari/i))
+      // ^ Even fancier Safari < 10 detection thanks to regex.  :^)
+      &&
+      (oldSafari = true);
     }
-    if (iPhoneORiPod || iPad || safari) {
+    if (iPhoneORiPod || iPad || oldSafari) {
       setCopyBtnText("Select text");
     }
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
-        // clone the text-to-copy node so that we can
-        // create a hidden textarea, with its text value
-        // (thanks to @LeaVerou for the idea)
+        // Clone the text-to-copy node so that we can
+        // create a hidden textarea, with its text value.
+        // Thanks to @LeaVerou for the idea.
         var dollyTheSheep = document.querySelector('.text-to-copy').cloneNode(true);
         var copyItem = document.createElement('textarea');
-        // if .value is undefined, .textContent will
-        // get assigned to the textarea we made
+        // If .value is undefined, .textContent will
+        // get assigned to the textarea we made.
         copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
         copyItem.style.opacity = 0;
         copyItem.style.position = "absolute";
         document.body.appendChild(copyItem);
         if (copyItem) {
-          // select the text
+          // Select the text:
           copyItem.select();
           try {
-            // now that we've selected the text, execute the copy command
+            // Now that we've selected the text, execute the copy command:
             document.execCommand('copy');
             if (iPhoneORiPod) {
               setCopyBtnText("Now tap 'Copy'");
             } else if (iPad) {
-              // the iPad doesn't have the 'Copy' box pop up,
-              // you have to tap the text first
+              // The iPad doesn't have the 'Copy' box pop up,
+              // you have to tap the text first.
               setCopyBtnText("Now tap the text, then 'Copy'");
-            } else if (safari) {
+            } else if (oldSafari) {
               setCopyBtnText("Press Command + C to copy");
             } else {
               setCopyBtnText("Copied!");
@@ -85,7 +88,7 @@
           } catch (ignore) {
             setCopyBtnText("Please copy manually");
           }
-          // this is what selects it on iOS
+          // This is what selects it on iOS:
           copyItem.focus();
           if (iPhoneORiPod || iPad) {
             copyItem.selectionStart = 0;
@@ -93,7 +96,7 @@
           } else {
             copyItem.select();
           }
-          // disable the button because clicking it again could cause madness
+          // Disable the button because clicking it again could cause madness.
           copyBtn.disabled = true;
           copyItem.remove();
         } else {
