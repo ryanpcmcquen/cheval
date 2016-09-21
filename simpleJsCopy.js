@@ -45,11 +45,13 @@
       iPhoneORiPod = true;
     } else if (navAgent.match(/iPad/i)) {
       iPad = true;
-    } else if (/^((?!chrome).)*safari/i.test(navAgent)) {
+    } else if (
+      /^((?!chrome).)*safari/i.test(navAgent)
       // ^ Fancy safari detection thanks to: https://stackoverflow.com/a/23522755
-      (navigator.userAgent.match(/^((?!chrome).)*[0-9][0-9](\.[0-9][0-9]?)?\ssafari/i))
-      // ^ Even fancier Safari < 10 detection thanks to regex.  :^)
       &&
+      !/^((?!chrome).)*[0-9][0-9](\.[0-9][0-9]?)?\ssafari/i.test(navAgent)
+      // ^ Even fancier Safari < 10 detection thanks to regex.  :^)
+    ) {
       (oldSafari = true);
     }
     if (iPhoneORiPod || iPad || oldSafari) {
