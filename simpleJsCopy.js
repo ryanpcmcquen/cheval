@@ -62,7 +62,8 @@
         // Clone the text-to-copy node so that we can
         // create a hidden textarea, with its text value.
         // Thanks to @LeaVerou for the idea.
-        var dollyTheSheep = document.querySelector('.text-to-copy').cloneNode(true);
+        var originalCopyItem = document.querySelector('.text-to-copy');
+        var dollyTheSheep = originalCopyItem.cloneNode(true);
         var copyItem = document.createElement('textarea');
         // If .value is undefined, .textContent will
         // get assigned to the textarea we made.
@@ -90,12 +91,13 @@
           } catch (ignore) {
             setCopyBtnText("Please copy manually");
           }
-          // This is what selects it on iOS/old Safari:
-          copyItem.focus();
           if (iPhoneORiPod || iPad || oldSafari) {
-            copyItem.selectionStart = 0;
-            copyItem.selectionEnd = copyItem.textContent.length;
+            // This is what selects it on iOS/old Safari:
+            originalCopyItem.focus();
+            originalCopyItem.selectionStart = 0;
+            originalCopyItem.selectionEnd = copyItem.textContent.length;
           } else {
+            copyItem.focus();
             copyItem.select();
           }
           // Disable the button because clicking it again could cause madness.
