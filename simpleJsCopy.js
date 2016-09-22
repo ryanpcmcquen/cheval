@@ -91,11 +91,13 @@
           } catch (ignore) {
             setCopyBtnText("Please copy manually");
           }
+          originalCopyItem.focus();
           if (iPhoneORiPod || iPad || oldSafari) {
-            // This is what selects it on iOS/old Safari:
-            originalCopyItem.focus();
+            // This is what selects it on iOS:
             originalCopyItem.selectionStart = 0;
             originalCopyItem.selectionEnd = copyItem.textContent.length;
+          } else if (oldSafari) {
+            originalCopyItem.select();
           } else {
             copyItem.focus();
             copyItem.select();
