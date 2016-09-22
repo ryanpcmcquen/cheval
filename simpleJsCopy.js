@@ -113,5 +113,5 @@
       throwErr("You don't have a <button> with the class: 'js-copy-btn'. Please check the simpleJsCopy README.");
     }
   };
-  window.addEventListener('load', simpleJsCopy);
+  window.addEventListener('DOMContentLoaded', simpleJsCopy);
 }());
