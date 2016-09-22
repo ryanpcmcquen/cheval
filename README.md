@@ -1,10 +1,10 @@
 # simpleJsCopy :clipboard:
 
-Just include the library (`v0.2.3`, ~1kB!):
+Just include the library (`v0.3.0`, ~1kB!):
 
-    <script src="https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/3639e551f1fb1b93821c70856dacce5f2318c37d/simpleJsCopy.min.js"></script>
+    <script src="https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/00e5cc4375a1616948052a7f8fc79db6ba6ddfee/simpleJsCopy.min.js"></script>
 
-https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/3639e551f1fb1b93821c70856dacce5f2318c37d/simpleJsCopy.min.js
+https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/00e5cc4375a1616948052a7f8fc79db6ba6ddfee/simpleJsCopy.min.js
 
 Then use the following elements:
 
@@ -27,7 +27,7 @@ Desktop:
 - Firefox 41+
 - Internet Explorer 9+
 - Opera 29+
-- Safari 10+ (Coming soon!)
+- Safari 10+
 
 Android:
 
@@ -38,7 +38,7 @@ Android:
 
 Everywhere else (meaning iOS), it will select the text. The library detects iDevices and will change the inital button text to `Select text` (to avoid confusing the user). After clicking it will say either `Now tap 'Copy'` (iPhone) or `Now tap the text, then 'Copy'` (iPad), to account for the strange behavioral differences of these devices.
 
-On desktop Safari (any version), the button will change to `Press Command + C to copy`.
+On desktop Safari (< v10), the button will change to `Press Command + C to copy`.
 
 On failure the button will say `Please copy manually`.
 
@@ -59,3 +59,6 @@ Note that you should also supplement that CSS with something like this helper li
 
 https://gist.github.com/ryanpcmcquen/1229119ffcf5098543c0
 
+#### What else is cool?
+
+If you aren't concerned with maximum compatibility, you can use elements besides a `textarea`. In the next version you will be allowed to add multiple copy elements to a page.
