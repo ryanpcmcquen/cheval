@@ -1,5 +1,4 @@
-/*! simpleJsCopy.js v0.3.0 by ryanpcmcquen */
-
+/*! simpleJsCopy.js v0.3.1 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
 // This program is free software: you can redistribute it and/or modify
@@ -19,10 +18,8 @@
 // You may have received a copy of the GNU General Public License along
 // with this program (most likely, a file named COPYING).  If not, see
 // <https://www.gnu.org/licenses/>.
-
 /*global window*/
 /*jslint browser:true, white:true*/
-
 (function () {
   'use strict';
   // A simple copy button:
@@ -41,11 +38,7 @@
       iPad = false,
       oldSafari = false;
     var navAgent = navigator.userAgent;
-    if (navAgent.match(/iPhone|iPod/i)) {
-      iPhoneORiPod = true;
-    } else if (navAgent.match(/iPad/i)) {
-      iPad = true;
-    } else if (
+    if (
       /^((?!chrome).)*safari/i.test(navAgent)
       // ^ Fancy safari detection thanks to: https://stackoverflow.com/a/23522755
       &&
@@ -53,6 +46,10 @@
       // ^ Even fancier Safari < 10 detection thanks to regex.  :^)
     ) {
       (oldSafari = true);
+    } else if (navAgent.match(/iPhone|iPod/i)) {
+      iPhoneORiPod = true;
+    } else if (navAgent.match(/iPad/i)) {
+      iPad = true;
     }
     if (iPhoneORiPod || iPad || oldSafari) {
       setCopyBtnText("Select text");
