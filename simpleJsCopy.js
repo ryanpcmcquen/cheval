@@ -79,14 +79,17 @@
           try {
             // Now that we've selected the text, execute the copy command:
             document.execCommand('copy');
-            if (iPhoneORiPod) {
-              setCopyBtnText("Now tap 'Copy'");
-            } else if (iPad) {
-              // The iPad doesn't have the 'Copy' box pop up,
-              // you have to tap the text first.
-              setCopyBtnText("Now tap the text, then 'Copy'");
-            } else if (oldSafari) {
-              setCopyBtnText("Press Command + C to copy");
+            if (oldSafari) {
+              if (iPhoneORiPod) {
+                setCopyBtnText("Now tap 'Copy'");
+              } else if (iPad) {
+                // The iPad doesn't have the 'Copy' box pop up,
+                // you have to tap the text first.
+                setCopyBtnText("Now tap the text, then 'Copy'");
+              } else {
+                // Just old!
+                setCopyBtnText("Press Command + C to copy");
+              }
             } else {
               setCopyBtnText("Copied!");
             }
