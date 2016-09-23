@@ -54,8 +54,10 @@
     } else if (navAgent.match(/iPad/i)) {
       iPad = true;
     }
-    if (iPhoneORiPod || iPad || oldSafari) {
-      setCopyBtnText("Select text");
+    if (iPhoneORiPod || iPad) {
+      if (oldSafari) {
+        setCopyBtnText("Select text");
+      }
     }
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
