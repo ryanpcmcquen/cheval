@@ -45,8 +45,11 @@
       !/^((?!chrome).)*[0-9][0-9](\.[0-9][0-9]?)?\ssafari/i.test(navAgent)
       // ^ Even fancier Safari < 10 detection thanks to regex.  :^)
     ) {
-      (oldSafari = true);
-    } else if (navAgent.match(/iPhone|iPod/i)) {
+      oldSafari = true;
+    }
+    // We need to test for older Safari and the device,
+    // because of quirky awesomeness.
+    if (navAgent.match(/iPhone|iPod/i)) {
       iPhoneORiPod = true;
     } else if (navAgent.match(/iPad/i)) {
       iPad = true;
