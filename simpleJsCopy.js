@@ -19,7 +19,7 @@
 // with this program (most likely, a file named COPYING).  If not, see
 // <https://www.gnu.org/licenses/>.
 /*global window*/
-/*jslint browser:true, white:true, single: true*/
+/*jslint browser:true, white:true, single:true*/
 (function () {
   'use strict';
 
