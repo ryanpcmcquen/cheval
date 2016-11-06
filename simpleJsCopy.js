@@ -76,6 +76,7 @@
         copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
         if (copyItem) {
           // Select the text:
+          copyItem.focus();
           copyItem.selectionStart = 0;
           copyItem.selectionEnd = copyItem.textContent.length;
           try {
