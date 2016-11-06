@@ -1,10 +1,10 @@
 # simpleJsCopy :clipboard:
 
-Just include the library (`v0.3.0`, ~1kB!):
+Just include the library (`v0.3.1`, ~1kB!):
 
-    <script src="https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/00e5cc4375a1616948052a7f8fc79db6ba6ddfee/simpleJsCopy.min.js"></script>
+    <script src="https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/7a5a88c0a43eaa95c03146555a45428407735d56/simpleJsCopy.min.js"></script>
 
-https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/00e5cc4375a1616948052a7f8fc79db6ba6ddfee/simpleJsCopy.min.js
+https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/7a5a88c0a43eaa95c03146555a45428407735d56/simpleJsCopy.min.js
 
 Then use the following elements:
 
@@ -34,9 +34,13 @@ Android:
 - Chrome 42+
 - Firefox 41+
 
+iOS:
+
+- 10+
+
 ##### What about other browsers?
 
-Everywhere else (meaning iOS), it will select the text. The library detects iDevices and will change the inital button text to `Select text` (to avoid confusing the user). After clicking it will say either `Now tap 'Copy'` (iPhone) or `Now tap the text, then 'Copy'` (iPad), to account for the strange behavioral differences of these devices.
+Everywhere else (old versions of Safari), it will select the text. The library detects iDevices and will change the inital button text to `Select text` (to avoid confusing the user). After clicking it will say either `Now tap 'Copy'` (iPhone) or `Now tap the text, then 'Copy'` (iPad), to account for the strange behavioral differences of these devices.
 
 On desktop Safari (< v10), the button will change to `Press Command + C to copy`.
 
