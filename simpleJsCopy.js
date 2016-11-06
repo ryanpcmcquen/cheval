@@ -75,7 +75,8 @@
         document.body.appendChild(copyItem);
         if (copyItem) {
           // Select the text:
-          copyItem.select();
+          copyItem.selectionStart = 0;
+          copyItem.selectionEnd = copyItem.textContent.length;
           try {
             // Now that we've selected the text, execute the copy command:
             document.execCommand('copy');
@@ -111,11 +112,15 @@
           copyBtn.disabled = true;
           copyItem.remove();
         } else {
-          throwErr("You don't have an element with the class: 'text-to-copy'. Please check the simpleJsCopy README.");
+          throwErr(
+            "You don't have an element with the class: 'text-to-copy'. Please check the simpleJsCopy README."
+          );
         }
       });
     } else {
-      throwErr("You don't have a <button> with the class: 'js-copy-btn'. Please check the simpleJsCopy README.");
+      throwErr(
+        "You don't have a <button> with the class: 'js-copy-btn'. Please check the simpleJsCopy README."
+      );
     }
   };
   window.addEventListener('DOMContentLoaded', simpleJsCopy);
