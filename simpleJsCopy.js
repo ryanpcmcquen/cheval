@@ -98,16 +98,8 @@
             setCopyBtnText("Please copy manually");
           }
           originalCopyItem.focus();
-          if (iPhoneORiPod || iPad) {
-            // This is what selects it on iOS:
-            originalCopyItem.selectionStart = 0;
-            originalCopyItem.selectionEnd = copyItem.textContent.length;
-          } else if (oldSafari) {
-            originalCopyItem.select();
-          } else {
-            copyItem.focus();
-            copyItem.select();
-          }
+          originalCopyItem.selectionStart = 0;
+          originalCopyItem.selectionEnd = copyItem.textContent.length;
           // Disable the button because clicking it again could cause madness.
           copyBtn.disabled = true;
           copyItem.remove();
