@@ -67,12 +67,13 @@
         var originalCopyItem = document.querySelector('.text-to-copy');
         var dollyTheSheep = originalCopyItem.cloneNode(true);
         var copyItem = document.createElement('textarea');
-        // If .value is undefined, .textContent will
-        // get assigned to the textarea we made.
-        copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
         copyItem.style.opacity = 0;
         copyItem.style.position = "absolute";
         document.body.appendChild(copyItem);
+
+        // If .value is undefined, .textContent will
+        // get assigned to the textarea we made.
+        copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
         if (copyItem) {
           // Select the text:
           copyItem.selectionStart = 0;
