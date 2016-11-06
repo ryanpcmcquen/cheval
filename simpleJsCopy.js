@@ -19,7 +19,7 @@
 // with this program (most likely, a file named COPYING).  If not, see
 // <https://www.gnu.org/licenses/>.
 /*global window*/
-/*jslint browser:true, white:true*/
+/*jslint browser:true, white:true, single: true*/
 (function () {
   'use strict';
   // A simple copy button:
@@ -34,15 +34,15 @@
     var throwErr = function (err) {
       throw new Error(err);
     };
-    var iPhoneORiPod = false,
-      iPad = false,
-      oldSafari = false;
+    var iPhoneORiPod = false;
+    var iPad = false;
+    var oldSafari = false;
     var navAgent = navigator.userAgent;
     if (
-      /^((?!chrome).)*safari/i.test(navAgent)
+      (/^((?!chrome).)*safari/i).test(navAgent)
       // ^ Fancy safari detection thanks to: https://stackoverflow.com/a/23522755
       &&
-      !/^((?!chrome).)*[0-9][0-9](\.[0-9][0-9]?)?\ssafari/i.test(navAgent)
+      !(/^((?!chrome).)*[0-9][0-9](\.[0-9][0-9]?)?\ssafari/i).test(navAgent)
       // ^ Even fancier Safari < 10 detection thanks to regex.  :^)
     ) {
       oldSafari = true;
@@ -69,16 +69,18 @@
         var copyItem = document.createElement('textarea');
         copyItem.style.opacity = 0;
         copyItem.style.position = "absolute";
-        document.body.appendChild(copyItem);
-
         // If .value is undefined, .textContent will
         // get assigned to the textarea we made.
         copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
-        if (copyItem) {
+        document.body.appendChild(copyItem);
+        //console.log(copyItem.value);
+        if (originalCopyItem) {
           // Select the text:
           copyItem.focus();
           copyItem.selectionStart = 0;
-          copyItem.selectionEnd = copyItem.textContent.length;
+          // For some reason the 'copyItem' does not get
+          // the correct length, so we use the OG.
+          copyItem.selectionEnd = originalCopyItem.textContent.length;
           try {
             // Now that we've selected the text, execute the copy command:
             document.execCommand('copy');
@@ -94,16 +96,14 @@
                 setCopyBtnText("Press Command + C to copy");
               }
             } else {
-              setCopyBtnText("Copied!");
+              setCopyBtnText("Copy again");
             }
           } catch (ignore) {
             setCopyBtnText("Please copy manually");
           }
           originalCopyItem.focus();
           originalCopyItem.selectionStart = 0;
-          originalCopyItem.selectionEnd = copyItem.textContent.length;
-          // Disable the button because clicking it again could cause madness.
-          copyBtn.disabled = true;
+          originalCopyItem.selectionEnd = originalCopyItem.textContent.length;
           copyItem.remove();
         } else {
           throwErr(
