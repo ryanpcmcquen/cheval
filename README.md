@@ -4,9 +4,9 @@
 
 Just include the library (`v1.0.0`, ~1kB!):
 
-    <script src="https://cdn.rawgit.com/ryanpcmcquen/cheval/7a5a88c0a43eaa95c03146555a45428407735d56/cheval.min.js"></script>
+    <script src="https://cdn.rawgit.com/ryanpcmcquen/cheval/c2ac8f12dbb54b07b4ea0ab4f093a296c7b3d211/cheval.min.js"></script>
 
-https://cdn.rawgit.com/ryanpcmcquen/cheval/7a5a88c0a43eaa95c03146555a45428407735d56/cheval.min.js
+https://cdn.rawgit.com/ryanpcmcquen/cheval/c2ac8f12dbb54b07b4ea0ab4f093a296c7b3d211/cheval.min.js
 
 Then use the following elements:
 
