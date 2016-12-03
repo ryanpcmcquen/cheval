@@ -1,4 +1,4 @@
-/*! simpleJsCopy.js v1.0.0--DEV by ryanpcmcquen */
+/*! cheval v1.0.0 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
 // This program is free software: you can redistribute it and/or modify
@@ -51,7 +51,7 @@
     var iPhoneORiPod = false;
     var iPad = false;
     var oldSafari = false;
-    var navAgent = navigator.userAgent;
+    var navAgent = window.navigator.userAgent;
     if (
       (/^((?!chrome).)*safari/i).test(navAgent)
       // ^ Fancy safari detection thanks to: https://stackoverflow.com/a/23522755
@@ -69,7 +69,7 @@
     } else if (navAgent.match(/iPad/i)) {
       iPad = true;
     }
-    var simpleJsCopy = function (btn, text) {
+    var cheval = function (btn, text) {
       var copyBtn = document.querySelector(btn);
 
       var setCopyBtnText = function (textToSet) {
@@ -128,20 +128,20 @@
             copyItem.remove();
           } else {
             throwErr(
-              "You don't have an element with the class: 'text-to-copy'. Please check the simpleJsCopy README."
+              "You don't have an element with the class: 'text-to-copy'. Please check the cheval README."
             );
           }
         });
       } else {
         throwErr(
-          "You don't have a <button> with the class: 'js-copy-btn'. Please check the simpleJsCopy README."
+          "You don't have a <button> with the class: 'js-copy-btn'. Please check the cheval README."
         );
       }
     };
 
-
+    // Loop through all sets of elements and buttons:
     matches.map(function (i) {
-      simpleJsCopy('.js-copy-btn' + i, '.text-to-copy' + i);
+      cheval('.js-copy-btn' + i, '.text-to-copy' + i);
     });
   });
 

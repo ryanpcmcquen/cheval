@@ -1,10 +1,12 @@
-# simpleJsCopy :clipboard:
+# Cheval :clipboard:
 
-Just include the library (`v0.3.1`, ~1kB!):
+![Cheval glass](https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg)
 
-    <script src="https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/7a5a88c0a43eaa95c03146555a45428407735d56/simpleJsCopy.min.js"></script>
+Just include the library (`v1.0.0`, ~1kB!):
 
-https://cdn.rawgit.com/ryanpcmcquen/simpleJsCopy/7a5a88c0a43eaa95c03146555a45428407735d56/simpleJsCopy.min.js
+    <script src="https://cdn.rawgit.com/ryanpcmcquen/cheval/7a5a88c0a43eaa95c03146555a45428407735d56/cheval.min.js"></script>
+
+https://cdn.rawgit.com/ryanpcmcquen/cheval/7a5a88c0a43eaa95c03146555a45428407735d56/cheval.min.js
 
 Then use the following elements:
 
@@ -65,4 +67,45 @@ https://gist.github.com/ryanpcmcquen/1229119ffcf5098543c0
 
 #### What else is cool?
 
-If you aren't concerned with maximum compatibility, you can use elements besides a `textarea`. In the next version you will be allowed to add multiple copy elements to a page.
+If you aren't concerned with maximum compatibility, you can use elements besides a `textarea`.
+
+You may also add multiple copy elements and buttons to each page, using the following format:
+
+```html
+<textarea class="text-to-copy-0"></textarea>
+<button class="js-copy-btn-0"></button>
+
+<textarea class="text-to-copy-1"></textarea>
+<button class="js-copy-btn-1"></button>
+
+<textarea class="text-to-copy-2"></textarea>
+<button class="js-copy-btn-2"></button>
+
+<textarea class="text-to-copy-3"></textarea>
+<button class="js-copy-btn-3"></button>
+```
+
+The characters after the dash in `text-to-copy-` or `js-copy-btn-` can be anything, they just have to match between the button and element.
+
+For example:
+
+```html
+<textarea class="text-to-copy-email"></textarea>
+<button class="js-copy-btn-email"></button>
+```
+
+Positioning of the elements and buttons does not matter, they do not need to be near each other on the page. This allows you to write declarative markup and not be concerned with the inner workings of this library. Enjoy!
+
+=====
+
+What does `cheval` mean?
+
+The name comes from Cheval glass, a type of mirror.
+
+=====
+
+Thanks to [Lea Verou](https://github.com/LeaVerou) for lots of support and help with the name.
+
+Thanks to Nikita Tcherednikov for the Cheval icon, provided under the [Creative Commons license](https://creativecommons.org/licenses/by/3.0/us/).
+
+Thanks to Charles Raymond Macauley for the drawing available [here](https://commons.wikimedia.org/wiki/File:Jekyll.and.Hyde.Ch10.Drawing2.jpg). (Public domain)
