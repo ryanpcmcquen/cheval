@@ -22,28 +22,47 @@
 /*jslint browser:true, white:true, single:true*/
 (function () {
   'use strict';
+  var textClassName = 'text-to-copy';
+  var buttonClassName = 'js-copy-btn';
   window.addEventListener('DOMContentLoaded', function () {
     var texts = Array.prototype.slice.call(document.querySelectorAll(
-      '[class^=text-to-copy]'));
+      '[class*=' + textClassName + ']'));
     var buttons = Array.prototype.slice.call(document.querySelectorAll(
-      '[class^=js-copy-btn]'));
+      '[class*=' + buttonClassName + ']'));
 
     var sets = {};
 
-    sets.texts = texts.map(function (text) {
-      return text.className.match('text-to-copy').input.replace(
-        /text-to-copy/, '');
-    }).sort();
+    var regexBuilder = function (prefix) {
+      return new RegExp(prefix + '\S*[^\s]');
+    };
 
-
-    sets.buttons = buttons.map(function (button) {
-      return button.className.match('js-copy-btn').input.replace(
-        /js-copy-btn/, '');
-    }).sort();
-
-    var matches = Object.keys(sets.texts).map(function (ignore, index) {
-      return sets.texts[index].match(sets.buttons[index]);
+    var textRegex = regexBuilder(textClassName);
+    sets.texts = texts.filter(function (text) {
+      return (text.className.match(textRegex)) ? text.className.match(
+        textRegex)[0].replace(textClassName, '') : false;
+    }).sort(function (x, y) {
+      return (x.className.match(textRegex)[0] - y.className.match(
+        textRegex)[0]);
     });
+
+    var buttonRegex = regexBuilder(buttonClassName);
+    sets.buttons = buttons.filter(function (button) {
+      return (button.className.match(buttonRegex)) ? button.className
+        .match(
+          buttonRegex)[0].replace(buttonClassName, '') : false;
+    }).sort(function (x, y) {
+      return (x.className.match(buttonRegex)[0] - y.className.match(
+        buttonRegex)[0]);
+    });
+
+    console.log(sets);
+    //
+    // var matches = sets.texts.map(function (ignore, index) {
+    //   console.log(index);
+    //   if (sets.texts[index] && sets.buttons[index]) {
+    //     return sets.texts[index].match(sets.buttons[index]);
+    //   }
+    // });
 
     var throwErr = function (err) {
       throw new Error(err);
@@ -92,7 +111,8 @@
           copyItem.style.position = "absolute";
           // If .value is undefined, .textContent will
           // get assigned to the textarea we made.
-          copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
+          copyItem.value = dollyTheSheep.value || dollyTheSheep
+            .textContent;
           document.body.appendChild(copyItem);
           if (copyItem) {
             // Select the text:
@@ -100,7 +120,8 @@
             copyItem.selectionStart = 0;
             // For some reason the 'copyItem' does not get
             // the correct length, so we use the OG.
-            copyItem.selectionEnd = originalCopyItem.textContent.length;
+            copyItem.selectionEnd = originalCopyItem.textContent
+              .length;
             try {
               // Now that we've selected the text, execute the copy command:
               document.execCommand('copy');
@@ -110,7 +131,8 @@
                 } else if (iPad) {
                   // The iPad doesn't have the 'Copy' box pop up,
                   // you have to tap the text first.
-                  setCopyBtnText("Now tap the text, then 'Copy'");
+                  setCopyBtnText(
+                    "Now tap the text, then 'Copy'");
                 } else {
                   // Just old!
                   setCopyBtnText("Press Command + C to copy");
@@ -128,21 +150,31 @@
             copyItem.remove();
           } else {
             throwErr(
-              "You don't have an element with the class: 'text-to-copy'. Please check the cheval README."
+              "You don't have an element with the class: '" +
+              textClassName +
+              "'. Please check the cheval README."
             );
           }
         });
       } else {
         throwErr(
-          "You don't have a <button> with the class: 'js-copy-btn'. Please check the cheval README."
+          "You don't have a <button> with the class: '" +
+          buttonClassName + "'. Please check the cheval README."
         );
       }
     };
 
     // Loop through all sets of elements and buttons:
-    matches.map(function (i) {
-      cheval('.js-copy-btn' + i, '.text-to-copy' + i);
-    });
+    // matches.map(function (i) {
+    //   cheval('.' + buttonClassName + i, '.' + textClassName + i);
+    // });
+
+    // Object.keys(sets.texts)
+
+    // sets.texts.map(function (i) {
+    //   cheval('.' + buttonClassName + i)
+    // });
+
   });
 
 }());
