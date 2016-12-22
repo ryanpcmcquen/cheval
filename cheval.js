@@ -22,47 +22,40 @@
 /*jslint browser:true, white:true, single:true*/
 (function () {
   'use strict';
+
   var textClassName = 'text-to-copy';
   var buttonClassName = 'js-copy-btn';
+  var sets = {};
+  var regexBuilder = function (prefix) {
+    return new RegExp(prefix + '\\S*');
+  };
+
   window.addEventListener('DOMContentLoaded', function () {
     var texts = Array.prototype.slice.call(document.querySelectorAll(
       '[class*=' + textClassName + ']'));
     var buttons = Array.prototype.slice.call(document.querySelectorAll(
       '[class*=' + buttonClassName + ']'));
 
-    var sets = {};
-
-    var regexBuilder = function (prefix) {
-      return new RegExp(prefix + '\S*[^\s]');
-    };
-
     var textRegex = regexBuilder(textClassName);
     sets.texts = texts.filter(function (text) {
-      return (text.className.match(textRegex)) ? text.className.match(
-        textRegex)[0].replace(textClassName, '') : false;
-    }).sort(function (x, y) {
-      return (x.className.match(textRegex)[0] - y.className.match(
-        textRegex)[0]);
-    });
+      console.log(text.className
+        .match(textRegex)[0].replace(textClassName, ''));
+      return (text.className.match(textRegex)) ? text.className
+        .match(textRegex)[0].replace(textClassName, '') : false;
+    }).sort();
 
     var buttonRegex = regexBuilder(buttonClassName);
     sets.buttons = buttons.filter(function (button) {
       return (button.className.match(buttonRegex)) ? button.className
-        .match(
-          buttonRegex)[0].replace(buttonClassName, '') : false;
-    }).sort(function (x, y) {
-      return (x.className.match(buttonRegex)[0] - y.className.match(
-        buttonRegex)[0]);
-    });
+        .match(buttonRegex)[0].replace(buttonClassName, '') :
+        false;
+    }).sort();
 
-    console.log(sets);
-    //
-    // var matches = sets.texts.map(function (ignore, index) {
-    //   console.log(index);
-    //   if (sets.texts[index] && sets.buttons[index]) {
-    //     return sets.texts[index].match(sets.buttons[index]);
-    //   }
-    // });
+    // console.log(sets);
+
+    var matches = sets.texts.map(function (ignore, index) {
+      return sets.texts[index].match(sets.buttons[index]);
+    });
 
     var throwErr = function (err) {
       throw new Error(err);
@@ -169,11 +162,13 @@
     //   cheval('.' + buttonClassName + i, '.' + textClassName + i);
     // });
 
-    // Object.keys(sets.texts)
+    console.log(sets);
 
-    // sets.texts.map(function (i) {
-    //   cheval('.' + buttonClassName + i)
-    // });
+    sets.texts.map(function (ignore, index) {
+      cheval('.' + buttonClassName + sets.buttons[index], '.' +
+        textClassName + sets.texts[index]);
+      // cheval(sets.buttons[index], sets.texts[index]);
+    });
 
   });
 
