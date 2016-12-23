@@ -1,4 +1,4 @@
-/*! cheval v1.0.0 by ryanpcmcquen */
+/*! cheval v1.0.1 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
 // This program is free software: you can redistribute it and/or modify
@@ -36,22 +36,18 @@
     var buttons = Array.prototype.slice.call(document.querySelectorAll(
       '[class*=' + buttonClassName + ']'));
 
-    var textRegex = regexBuilder(textClassName);
-    sets.texts = texts.filter(function (text) {
-      console.log(text.className
-        .match(textRegex)[0].replace(textClassName, ''));
-      return (text.className.match(textRegex)) ? text.className
-        .match(textRegex)[0].replace(textClassName, '') : false;
-    }).sort();
+    var classNameFinder = function (arr, regex, namePrefix) {
+      return arr.map(function (item) {
+        return (item.className.match(regex)) ? item.className
+          .match(regex)[0].replace(namePrefix, '') : false;
+      }).sort();
+    };
 
-    var buttonRegex = regexBuilder(buttonClassName);
-    sets.buttons = buttons.filter(function (button) {
-      return (button.className.match(buttonRegex)) ? button.className
-        .match(buttonRegex)[0].replace(buttonClassName, '') :
-        false;
-    }).sort();
+    sets.texts = classNameFinder(
+      texts, regexBuilder(textClassName), textClassName);
 
-    // console.log(sets);
+    sets.buttons = classNameFinder(
+      buttons, regexBuilder(buttonClassName), buttonClassName);
 
     var matches = sets.texts.map(function (ignore, index) {
       return sets.texts[index].match(sets.buttons[index]);
@@ -158,16 +154,8 @@
     };
 
     // Loop through all sets of elements and buttons:
-    // matches.map(function (i) {
-    //   cheval('.' + buttonClassName + i, '.' + textClassName + i);
-    // });
-
-    console.log(sets);
-
-    sets.texts.map(function (ignore, index) {
-      cheval('.' + buttonClassName + sets.buttons[index], '.' +
-        textClassName + sets.texts[index]);
-      // cheval(sets.buttons[index], sets.texts[index]);
+    matches.map(function (i) {
+      cheval('.' + buttonClassName + i, '.' + textClassName + i);
     });
 
   });
