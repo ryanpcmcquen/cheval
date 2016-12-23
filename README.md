@@ -1,6 +1,6 @@
 # Cheval :clipboard:
 
-![Cheval glass](https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg)
+<img alt="Cheval glass" width="250" src="https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg">
 
 Just include the library (`v1.0.0`, ~1kB!):
 
