@@ -1,4 +1,4 @@
-/*! cheval v1.0.0 by ryanpcmcquen */
+/*! cheval v1.0.1 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
 // This program is free software: you can redistribute it and/or modify
@@ -22,26 +22,34 @@
 /*jslint browser:true, white:true, single:true*/
 (function () {
   'use strict';
+
+  var textClassName = 'text-to-copy';
+  var buttonClassName = 'js-copy-btn';
+  var sets = {};
+  var regexBuilder = function (prefix) {
+    return new RegExp(prefix + '\\S*');
+  };
+
   window.addEventListener('DOMContentLoaded', function () {
     var texts = Array.prototype.slice.call(document.querySelectorAll(
-      '[class^=text-to-copy]'));
+      '[class*=' + textClassName + ']'));
     var buttons = Array.prototype.slice.call(document.querySelectorAll(
-      '[class^=js-copy-btn]'));
+      '[class*=' + buttonClassName + ']'));
 
-    var sets = {};
+    var classNameFinder = function (arr, regex, namePrefix) {
+      return arr.map(function (item) {
+        return (item.className.match(regex)) ? item.className
+          .match(regex)[0].replace(namePrefix, '') : false;
+      }).sort();
+    };
 
-    sets.texts = texts.map(function (text) {
-      return text.className.match('text-to-copy').input.replace(
-        /text-to-copy/, '');
-    }).sort();
+    sets.texts = classNameFinder(
+      texts, regexBuilder(textClassName), textClassName);
 
+    sets.buttons = classNameFinder(
+      buttons, regexBuilder(buttonClassName), buttonClassName);
 
-    sets.buttons = buttons.map(function (button) {
-      return button.className.match('js-copy-btn').input.replace(
-        /js-copy-btn/, '');
-    }).sort();
-
-    var matches = Object.keys(sets.texts).map(function (ignore, index) {
+    var matches = sets.texts.map(function (ignore, index) {
       return sets.texts[index].match(sets.buttons[index]);
     });
 
@@ -92,7 +100,8 @@
           copyItem.style.position = "absolute";
           // If .value is undefined, .textContent will
           // get assigned to the textarea we made.
-          copyItem.value = dollyTheSheep.value || dollyTheSheep.textContent;
+          copyItem.value = dollyTheSheep.value || dollyTheSheep
+            .textContent;
           document.body.appendChild(copyItem);
           if (copyItem) {
             // Select the text:
@@ -100,7 +109,8 @@
             copyItem.selectionStart = 0;
             // For some reason the 'copyItem' does not get
             // the correct length, so we use the OG.
-            copyItem.selectionEnd = originalCopyItem.textContent.length;
+            copyItem.selectionEnd = originalCopyItem.textContent
+              .length;
             try {
               // Now that we've selected the text, execute the copy command:
               document.execCommand('copy');
@@ -110,7 +120,8 @@
                 } else if (iPad) {
                   // The iPad doesn't have the 'Copy' box pop up,
                   // you have to tap the text first.
-                  setCopyBtnText("Now tap the text, then 'Copy'");
+                  setCopyBtnText(
+                    "Now tap the text, then 'Copy'");
                 } else {
                   // Just old!
                   setCopyBtnText("Press Command + C to copy");
@@ -128,21 +139,25 @@
             copyItem.remove();
           } else {
             throwErr(
-              "You don't have an element with the class: 'text-to-copy'. Please check the cheval README."
+              "You don't have an element with the class: '" +
+              textClassName +
+              "'. Please check the cheval README."
             );
           }
         });
       } else {
         throwErr(
-          "You don't have a <button> with the class: 'js-copy-btn'. Please check the cheval README."
+          "You don't have a <button> with the class: '" +
+          buttonClassName + "'. Please check the cheval README."
         );
       }
     };
 
     // Loop through all sets of elements and buttons:
     matches.map(function (i) {
-      cheval('.js-copy-btn' + i, '.text-to-copy' + i);
+      cheval('.' + buttonClassName + i, '.' + textClassName + i);
     });
+
   });
 
 }());
