@@ -1,4 +1,4 @@
-/*! cheval v1.0.1 by ryanpcmcquen */
+/*! cheval v1.0.2 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 //
 // This program is free software: you can redistribute it and/or modify
@@ -90,6 +90,8 @@
       }
       if (copyBtn) {
         copyBtn.addEventListener('click', function () {
+          var oldPosX = window.scrollX;
+          var oldPosY = window.scrollY;
           // Clone the text-to-copy node so that we can
           // create a hidden textarea, with its text value.
           // Thanks to @LeaVerou for the idea.
@@ -133,6 +135,9 @@
               setCopyBtnText("Please copy manually");
             }
             originalCopyItem.focus();
+            // Restore the user's original position to avoid
+            // 'jumping' when they click a copy button.
+            window.scrollTo(oldPosX, oldPosY);
             originalCopyItem.selectionStart = 0;
             originalCopyItem.selectionEnd = originalCopyItem.textContent
               .length;
