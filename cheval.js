@@ -1,4 +1,5 @@
-/*! cheval v1.0.2 by ryanpcmcquen */
+// @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&dn=gpl-2.0.txt GPL-v2-or-later
+/*! cheval v1.0.3 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
 //
 // This program is free software: you can redistribute it and/or modify
@@ -166,3 +167,4 @@
   });
 
 }());
+// @license-end

@@ -104,6 +104,12 @@ The name comes from Cheval glass, a type of mirror.
 
 =====
 
+This project is LibreJS compliant!
+
+[![LibreJS](https://www.gnu.org/software/librejs/images/logo-medium.png)](https://www.gnu.org/software/librejs/)
+
+=====
+
 Thanks to [Lea Verou](https://github.com/LeaVerou) for lots of support and help with the name.
 
 Thanks to Nikita Tcherednikov for the Cheval icon, provided under the [Creative Commons license](https://creativecommons.org/licenses/by/3.0/us/).
