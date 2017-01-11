@@ -2,11 +2,11 @@
 
 <img alt="Cheval glass" width="250" src="https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg">
 
-Just include the library (`v1.0.2`, ~1kB!):
+Just include the library (`v1.0.3`, ~1kB!):
 
-    <script src="https://cdn.rawgit.com/ryanpcmcquen/cheval/97f993f71b47ccb79c69b8a741943efc337ef055/cheval.min.js"></script>
+    <script src="https://cdn.rawgit.com/ryanpcmcquen/cheval/3b6dbcdeea960459857438ccf82c6863d5714056/cheval.min.js"></script>
 
-https://cdn.rawgit.com/ryanpcmcquen/cheval/97f993f71b47ccb79c69b8a741943efc337ef055/cheval.min.js
+https://cdn.rawgit.com/ryanpcmcquen/cheval/3b6dbcdeea960459857438ccf82c6863d5714056/cheval.min.js
 
 Then use the following elements:
 
