@@ -1,5 +1,5 @@
 // @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&dn=gpl-2.0.txt GPL-v2-or-later
-/*! cheval v1.0.3 by ryanpcmcquen */
+/*! cheval v1.0.4 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
 //
 // This program is free software: you can redistribute it and/or modify
@@ -86,7 +86,7 @@
       };
       if (iPhoneORiPod || iPad) {
         if (oldSafari) {
-          setCopyBtnText("Select text");
+          setCopyBtnText('Select text');
         }
       }
       if (copyBtn) {
@@ -100,8 +100,8 @@
           var dollyTheSheep = originalCopyItem.cloneNode(true);
           var copyItem = document.createElement('textarea');
           copyItem.style.opacity = 0;
-          copyItem.setAttribute("disabled", true);
-          copyItem.style.position = "absolute";
+          copyItem.setAttribute('disabled', true);
+          copyItem.style.position = 'absolute';
           // If .value is undefined, .textContent will
           // get assigned to the textarea we made.
           copyItem.value = dollyTheSheep.value || dollyTheSheep
@@ -128,13 +128,13 @@
                     "Now tap the text, then 'Copy'");
                 } else {
                   // Just old!
-                  setCopyBtnText("Press Command + C to copy");
+                  setCopyBtnText('Press Command + C to copy');
                 }
               } else {
-                setCopyBtnText("Copy again");
+                setCopyBtnText('Copy again');
               }
             } catch (ignore) {
-              setCopyBtnText("Please copy manually");
+              setCopyBtnText('Please copy manually');
             }
             originalCopyItem.focus();
             // Restore the user's original position to avoid
