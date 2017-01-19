@@ -100,6 +100,7 @@
           var dollyTheSheep = originalCopyItem.cloneNode(true);
           var copyItem = document.createElement('textarea');
           copyItem.style.opacity = 0;
+          copyItem.setAttribute("disabled", true);
           copyItem.style.position = "absolute";
           // If .value is undefined, .textContent will
           // get assigned to the textarea we made.
