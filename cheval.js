@@ -1,5 +1,5 @@
 // @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&dn=gpl-2.0.txt GPL-v2-or-later
-/*! cheval v1.0.4 by ryanpcmcquen */
+/*! cheval v1.0.5 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
 //
 // This program is free software: you can redistribute it and/or modify
@@ -100,7 +100,6 @@
           var dollyTheSheep = originalCopyItem.cloneNode(true);
           var copyItem = document.createElement('textarea');
           copyItem.style.opacity = 0;
-          copyItem.setAttribute('disabled', true);
           copyItem.style.position = 'absolute';
           // If .value is undefined, .textContent will
           // get assigned to the textarea we made.
@@ -118,6 +117,9 @@
             try {
               // Now that we've selected the text, execute the copy command:
               document.execCommand('copy');
+              // And disable the cloned area to prevent jumping.
+              // This has to come after the `copy` command.
+              copyItem.setAttribute('disabled', true);
               if (oldSafari) {
                 if (iPhoneORiPod) {
                   setCopyBtnText("Now tap 'Copy'");
