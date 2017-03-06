@@ -114,6 +114,12 @@ This project is LibreJS compliant!
 
 =====
 
+If you prefer using specific tags instead of the latest version, you may specify a tag in the `jsDelivr` URL:
+
+https://cdn.jsdelivr.net/cheval/1.0.6/cheval.min.js
+
+=====
+
 Thanks to [Lea Verou](https://github.com/LeaVerou) for lots of support and help with the name.
 
 Thanks to Nikita Tcherednikov for the Cheval icon, provided under the [Creative Commons license](https://creativecommons.org/licenses/by/3.0/us/).
