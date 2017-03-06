@@ -2,11 +2,15 @@
 
 <img alt="Cheval glass" width="250" src="https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg">
 
-Just include the library (`v1.0.5`, ~1kB!):
+Just include the library (~1kB!):
 
-    <script src="https://cdn.rawgit.com/ryanpcmcquen/cheval/d3ca7ff71bfad9a378e0ef8a9b1fc634d432e0aa/cheval.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/cheval/latest/cheval.min.js"></script>
 
-https://cdn.rawgit.com/ryanpcmcquen/cheval/d3ca7ff71bfad9a378e0ef8a9b1fc634d432e0aa/cheval.min.js
+https://cdn.jsdelivr.net/cheval/latest/cheval.min.js
+
+Provided by:
+
+[![jsDelivr](https://usercontent.irccloud-cdn.com/file/VDPwfxpi/jsDelivr_logo.png)](https://www.jsdelivr.com/)
 
 Then use the following elements:
 
