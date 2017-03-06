@@ -103,8 +103,8 @@
           copyItem.style.position = 'absolute';
           // If .value is undefined, .textContent will
           // get assigned to the textarea we made.
-          copyItem.value = dollyTheSheep.value || dollyTheSheep
-            .textContent;
+          var value = dollyTheSheep.value || dollyTheSheep.textContent;
+          copyItem.value = value;
           document.body.appendChild(copyItem);
           if (copyItem) {
             // Select the text:
@@ -112,8 +112,7 @@
             copyItem.selectionStart = 0;
             // For some reason the 'copyItem' does not get
             // the correct length, so we use the OG.
-            copyItem.selectionEnd = originalCopyItem.textContent
-              .length;
+            copyItem.selectionEnd = value.length;
             try {
               // Now that we've selected the text, execute the copy command:
               document.execCommand('copy');
@@ -143,8 +142,7 @@
             // 'jumping' when they click a copy button.
             window.scrollTo(oldPosX, oldPosY);
             originalCopyItem.selectionStart = 0;
-            originalCopyItem.selectionEnd = originalCopyItem.textContent
-              .length;
+            originalCopyItem.selectionEnd = value.length;
             copyItem.remove();
           } else {
             throwErr(
