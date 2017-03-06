@@ -1,5 +1,5 @@
 // @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&dn=gpl-2.0.txt GPL-v2-or-later
-/*! cheval v1.0.5 by ryanpcmcquen */
+/*! cheval v1.0.6 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
 //
 // This program is free software: you can redistribute it and/or modify
@@ -103,8 +103,8 @@
           copyItem.style.position = 'absolute';
           // If .value is undefined, .textContent will
           // get assigned to the textarea we made.
-          var value = dollyTheSheep.value || dollyTheSheep.textContent;
-          copyItem.value = value;
+          var copyValue = dollyTheSheep.value || dollyTheSheep.textContent;
+          copyItem.value = copyValue;
           document.body.appendChild(copyItem);
           if (copyItem) {
             // Select the text:
@@ -112,7 +112,7 @@
             copyItem.selectionStart = 0;
             // For some reason the 'copyItem' does not get
             // the correct length, so we use the OG.
-            copyItem.selectionEnd = value.length;
+            copyItem.selectionEnd = copyValue.length;
             try {
               // Now that we've selected the text, execute the copy command:
               document.execCommand('copy');
@@ -142,7 +142,7 @@
             // 'jumping' when they click a copy button.
             window.scrollTo(oldPosX, oldPosY);
             originalCopyItem.selectionStart = 0;
-            originalCopyItem.selectionEnd = value.length;
+            originalCopyItem.selectionEnd = copyValue.length;
             copyItem.remove();
           } else {
             throwErr(
@@ -160,9 +160,10 @@
       }
     };
 
-    // Loop through all sets of elements and buttons:
-    matches.map(function (i) {
-      cheval('.' + buttonClassName + i, '.' + textClassName + i);
+    // Copy all sets of elements and buttons:
+    var copiedItems = matches.map(function (i) {
+      return cheval('.' + buttonClassName + i, '.' + textClassName +
+        i);
     });
 
   });
