@@ -120,6 +120,17 @@ https://cdn.jsdelivr.net/cheval/1.1.0/cheval.min.js
 
 =====
 
+### Contributing
+
+If you wish to contribute to this project, pull requests are always welcome! Please make sure that any changes pass through [![http://jslint.com/](http://jslint.com/image/jslintpill.gif)](http://jslint.com/) with the following options before submitting them:
+
+```js
+/*global window*/
+/*jslint browser:true*/
+```
+
+=====
+
 Thanks to [Lea Verou](https://github.com/LeaVerou) for lots of support and help with the name.
 
 Thanks to Nikita Tcherednikov for the Cheval icon, provided under the [Creative Commons license](https://creativecommons.org/licenses/by/3.0/us/).
