@@ -2,7 +2,7 @@
 
 <img alt="Cheval glass" width="250" src="https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg">
 
-Just include the library (~1kB!):
+Just include the library (~2kB!):
 
     <script src="https://cdn.jsdelivr.net/cheval/latest/cheval.min.js"></script>
 
