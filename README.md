@@ -4,9 +4,9 @@
 
 Just include the library (~2kB!):
 
-    <script src="https://cdn.jsdelivr.net/cheval/latest/cheval.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@latest/cheval.min.js"></script>
 
-https://cdn.jsdelivr.net/cheval/latest/cheval.min.js
+https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@latest/cheval.min.js
 
 Provided by:
 
@@ -116,7 +116,7 @@ This project is LibreJS compliant!
 
 If you prefer using specific tags instead of the latest version, you may specify a tag in the `jsDelivr` URL:
 
-https://cdn.jsdelivr.net/cheval/1.1.0/cheval.min.js
+https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.1.0/cheval.min.js
 
 =====
 
