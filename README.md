@@ -136,3 +136,6 @@ Thanks to [Lea Verou](https://github.com/LeaVerou) for lots of support and help 
 Thanks to Nikita Tcherednikov for the Cheval icon, provided under the [Creative Commons license](https://creativecommons.org/licenses/by/3.0/us/).
 
 Thanks to Charles Raymond Macauley for the drawing available [here](https://commons.wikimedia.org/wiki/File:Jekyll.and.Hyde.Ch10.Drawing2.jpg). (Public domain)
+
+Thanks to BrowserStack for giving Cheval an incredible platform to test with!
+[![https://browserstack.com](https://usercontent.irccloud-cdn.com/file/hinftV1W/BrowserStack_logo.png)](https://browserstack.com)
