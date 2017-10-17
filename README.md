@@ -23,6 +23,12 @@ The library takes cares of the rest. :shipit:
 
 =====
 
+Featured in MarkApp!
+
+[![MarkApp](https://usercontent.irccloud-cdn.com/file/X2uIqOZA/Screen%20Shot%202017-10-17%20at%208.23.37%20AM.png)](http://markapp.io)
+
+=====
+
 #### So what?! Where does it work?
 
 Almost everywhere!
@@ -120,7 +126,7 @@ https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.1.0/cheval.min.js
 
 =====
 
-### Contributing
+### Contributing:
 
 If you wish to contribute to this project, pull requests are always welcome! Please make sure that any changes pass through [![http://jslint.com/](http://jslint.com/image/jslintpill.gif)](http://jslint.com/) with the following options before submitting them:
 
