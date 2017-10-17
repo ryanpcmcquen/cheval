@@ -23,7 +23,7 @@ The library takes cares of the rest. :shipit:
 
 =====
 
-Featured in MarkApp!
+#### Featured in MarkApp!
 
 [![MarkApp](https://usercontent.irccloud-cdn.com/file/X2uIqOZA/Screen%20Shot%202017-10-17%20at%208.23.37%20AM.png)](http://markapp.io)
 
@@ -105,6 +105,26 @@ For example:
 ```
 
 Positioning of the elements and buttons does not matter, they do not need to be near each other on the page. This allows you to write declarative markup and not be concerned with the inner workings of this library. Enjoy!
+
+=====
+
+#### But ...
+
+###### I want to dynamically add elements to my page, `cheval` only runs on page load!
+
+You're right! That's why in version `1.2.0` we introduced `gCheval`. An alternative library that can be invoked at will using:
+
+```js
+gCheval();
+```
+
+Note that when using `gCheval` it is not invoked on page load, so if you want it there, you need to load it in your own event listener!
+
+Grab it here:
+
+```
+https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@latest/gCheval.js
+```
 
 =====
 
