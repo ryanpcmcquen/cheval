@@ -1,5 +1,5 @@
 // @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&dn=gpl-2.0.txt GPL-v2-or-later
-/*! cheval v1.2.0 by ryanpcmcquen */
+/*! gCheval v1.2.0 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
 //
 // This program is free software: you can redistribute it and/or modify
@@ -39,7 +39,7 @@
         return new RegExp(prefix + "\\S*");
     };
 
-    window.addEventListener("DOMContentLoaded", function () {
+    window.gCheval = function () {
         var texts = Array.prototype.slice.call(document.querySelectorAll(
             "[class*=" + textClassName + "]"
         ));
@@ -99,6 +99,7 @@
         } else if (navAgent.match(/iPad/i)) {
             iPad = true;
         }
+
         var cheval = function (btn, text) {
             var copyBtn = document.querySelector(btn);
 
@@ -214,8 +215,8 @@
                 "." + textClassName + i
             );
         });
-
-    });
+    };
 
 }());
 // @license-end
+
