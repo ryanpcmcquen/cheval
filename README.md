@@ -64,8 +64,8 @@ On failure the button will say `Please copy manually`.
 
 ```css
 .text-to-copy {
-  opacity: 0;
-  position: absolute;
+    opacity: 0;
+    position: absolute;
 }
 ```
 
