@@ -163,5 +163,12 @@ Thanks to Nikita Tcherednikov for the Cheval icon, provided under the [Creative 
 
 Thanks to Charles Raymond Macauley for the drawing available [here](https://commons.wikimedia.org/wiki/File:Jekyll.and.Hyde.Ch10.Drawing2.jpg). (Public domain)
 
-Thanks to BrowserStack for giving Cheval an incredible platform to test with!
-[![https://browserstack.com](https://usercontent.irccloud-cdn.com/file/hinftV1W/BrowserStack_logo.png)](https://browserstack.com)
+Thanks to BrowserStack and Koding!
+[![https://browserstack.com](https://usercontent.irccloud-cdn.com/file/1egf6j3q/BrowserStack_logo.png)](https://browserstack.com)
+
+<a href="https://koding.com/">
+    <img
+         src="https://koding-cdn.s3.amazonaws.com/badges/made-with-koding/v1/koding_badge_RectangleColor.png"
+         srcset="https://koding-cdn.s3.amazonaws.com/badges/made-with-koding/v1/koding_badge_RectangleColor.png 1x, https://koding-cdn.s3.amazonaws.com/badges/made-with-koding/v1/koding_badge_RectangleColor@2x.png 2x"
+         alt="Made with Koding"/>
+</a>
