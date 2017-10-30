@@ -164,6 +164,7 @@ Thanks to Nikita Tcherednikov for the Cheval icon, provided under the [Creative 
 Thanks to Charles Raymond Macauley for the drawing available [here](https://commons.wikimedia.org/wiki/File:Jekyll.and.Hyde.Ch10.Drawing2.jpg). (Public domain)
 
 Thanks to BrowserStack and Koding!
+
 [![https://browserstack.com](https://usercontent.irccloud-cdn.com/file/1egf6j3q/BrowserStack_logo.png)](https://browserstack.com)
 
 <a href="https://koding.com/">
