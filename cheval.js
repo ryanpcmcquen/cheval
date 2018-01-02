@@ -170,6 +170,7 @@
                                         );
                                     }
                                 } else {
+                                    document.activeElement.blur();
                                     setCopyBtnText(
                                         afterCopyText.desktop
                                     );
