@@ -176,9 +176,11 @@
                                 }
                             }
                         } catch (ignore) {
-                            setCopyBtnText(
-                                afterCopyText.notSupported
-                            );
+                            if (allowButtonTextToChange) {
+                              setCopyBtnText(
+                                  afterCopyText.notSupported
+                              );
+                            }
                         }
                         originalCopyItem.focus();
                         // Restore the user's original position to avoid
