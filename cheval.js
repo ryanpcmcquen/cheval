@@ -170,6 +170,9 @@
                                         );
                                     }
                                 } else {
+                                    // Hide the onscreen keyboard, which opens
+                                    // on iOS devices, due to the target element
+                                    // being focused on.
                                     document.activeElement.blur();
                                     setCopyBtnText(
                                         afterCopyText.desktop
