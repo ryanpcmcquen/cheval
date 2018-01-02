@@ -178,9 +178,9 @@
                             }
                         } catch (ignore) {
                             if (allowButtonTextToChange) {
-                              setCopyBtnText(
-                                  afterCopyText.notSupported
-                              );
+                                setCopyBtnText(
+                                    afterCopyText.notSupported
+                                );
                             }
                         }
                         originalCopyItem.focus();
