@@ -112,18 +112,12 @@ Positioning of the elements and buttons does not matter, they do not need to be 
 
 ###### I want to dynamically add elements to my page, `cheval` only runs on page load!
 
-You're right! That's why in version `1.2.0` we introduced `gCheval`. An alternative library that can be invoked at will using:
+You're right! That's why in version `1.3.0`, `cheval` also adds itself to global scope.
+
+Now you can invoke at will on dynamic elements!
 
 ```js
-gCheval();
-```
-
-Note that when using `gCheval` it is not invoked on page load, so if you want it there, you need to load it in your own event listener!
-
-Grab it here:
-
-```
-https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@latest/gCheval.js
+cheval(".dynamic-js-copy-btn", ".dynamic-text-to-copy");
 ```
 
 =====
@@ -142,7 +136,7 @@ This project is LibreJS compliant!
 
 If you prefer using specific tags instead of the latest version, you may specify a tag in the `jsDelivr` URL:
 
-https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.2.0/cheval.min.js
+https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.3.0/cheval.min.js
 
 =====
 

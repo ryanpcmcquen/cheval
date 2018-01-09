@@ -1,5 +1,5 @@
 // @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&dn=gpl-2.0.txt GPL-v2-or-later
-/*! cheval v1.2.0 by ryanpcmcquen */
+/*! cheval v1.3.0 by ryanpcmcquen */
 // Ryan P.C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
 //
 // This program is free software: you can redistribute it and/or modify
@@ -19,14 +19,14 @@
 // You may have received a copy of the GNU General Public License along
 // with this program (most likely, a file named COPYING).  If not, see
 // <https://www.gnu.org/licenses/>.
-/*global window*/
+/*global window, module*/
 /*jslint browser:true*/
 (function () {
     "use strict";
 
     var textClassName = "text-to-copy";
     var buttonClassName = "js-copy-btn";
-    var allowButtonTextToChange = true;
+    var allowingButtonTextToChange = true;
     var afterCopyText = {
         desktop: "Copy again",
         iPad: "Now tap the text, then 'Copy'",
@@ -148,10 +148,10 @@
                                 true
                             );
                             // Allow the button text to be changed.
-                            // Set `allowButtonTextToChange = false` to leave it alone.
+                            // Set `allowingButtonTextToChange = false` to leave it alone.
                             // Default is `true`.
                             // Thanks to @jasondavis.
-                            if (allowButtonTextToChange) {
+                            if (allowingButtonTextToChange) {
                                 if (oldSafari) {
                                     if (iPhoneORiPod) {
                                         setCopyBtnText(
@@ -180,7 +180,7 @@
                                 }
                             }
                         } catch (ignore) {
-                            if (allowButtonTextToChange) {
+                            if (allowingButtonTextToChange) {
                                 setCopyBtnText(
                                     afterCopyText.notSupported
                                 );
@@ -221,6 +221,10 @@
             );
         });
 
+        try {
+            window.cheval = cheval;
+            module.exports = cheval;
+        } catch (ignore) {}
     });
 
 }());
