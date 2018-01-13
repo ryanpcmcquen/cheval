@@ -145,8 +145,8 @@ https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.3.0/cheval.min.js
 If you wish to contribute to this project, pull requests are always welcome! Please make sure that any changes pass through [![http://jslint.com/](http://jslint.com/image/jslintpill.gif)](http://jslint.com/) with the following options before submitting them:
 
 ```js
-/*global window*/
-/*jslint browser:true*/
+/*global module, window*/
+/*jslint browser: true*/
 ```
 
 =====
