@@ -19,8 +19,8 @@
 // You may have received a copy of the GNU General Public License along
 // with this program (most likely, a file named COPYING).  If not, see
 // <https://www.gnu.org/licenses/>.
-/*global window, module*/
-/*jslint browser:true*/
+/*global module, window*/
+/*jslint browser: true*/
 (function () {
     "use strict";
 
