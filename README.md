@@ -1,5 +1,8 @@
 # Cheval :clipboard:
 
+[![](https://data.jsdelivr.com/v1/package/gh/ryanpcmcquen/cheval/badge?style=rounded)](https://www.jsdelivr.com/package/gh/ryanpcmcquen/cheval)
+[![GitHub license](https://img.shields.io/github/license/ryanpcmcquen/cheval.svg)](https://github.com/ryanpcmcquen/cheval/blob/gh-pages/LICENSE)
+
 <img alt="Cheval glass" width="250" src="https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg">
 
 Just include the library (~2kB!):
