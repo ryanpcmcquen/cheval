@@ -1,6 +1,6 @@
 # Cheval :clipboard:
 
-[![Downloads](https://img.shields.io/badge/jsDelivr-86k%2B%20downloads-orange.svg?style=rounded)](https://www.jsdelivr.com/package/gh/ryanpcmcquen/cheval)
+[![Downloads](https://img.shields.io/badge/jsDelivr-86k%2B%20downloads-green.svg?style=rounded)](https://www.jsdelivr.com/package/gh/ryanpcmcquen/cheval)
 [![GitHub license](https://img.shields.io/github/license/ryanpcmcquen/cheval.svg)](https://github.com/ryanpcmcquen/cheval/blob/gh-pages/LICENSE)
 
 <img alt="Cheval glass" width="250" src="https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg">
