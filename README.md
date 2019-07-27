@@ -24,13 +24,13 @@ The library takes cares of the rest. :shipit:
 
 :newspaper: You don't have to write any JavaScript to use it!
 
-=====
+-----
 
 #### Featured in MarkApp!
 
 [![MarkApp](https://usercontent.irccloud-cdn.com/file/X2uIqOZA/Screen%20Shot%202017-10-17%20at%208.23.37%20AM.png)](http://markapp.io)
 
-=====
+-----
 
 #### So what?! Where does it work?
 
@@ -61,7 +61,7 @@ On desktop Safari (< v10), the button will change to `Press Command + C to copy`
 
 On failure the button will say `Please copy manually`.
 
-=====
+-----
 
 :warning: If you want your textarea to be invisible for some reason, use this CSS:
 
@@ -109,7 +109,7 @@ For example:
 
 Positioning of the elements and buttons does not matter, they do not need to be near each other on the page. This allows you to write declarative markup and not be concerned with the inner workings of this library. Enjoy!
 
-=====
+-----
 
 #### But ...
 
@@ -123,25 +123,25 @@ Now you can invoke at will on dynamic elements!
 cheval(".dynamic-js-copy-btn", ".dynamic-text-to-copy");
 ```
 
-=====
+-----
 
 What does `cheval` mean?
 
 The name comes from Cheval glass, a type of mirror.
 
-=====
+-----
 
 This project is LibreJS compliant!
 
 [![LibreJS](https://www.gnu.org/software/librejs/images/logo-medium.png)](https://www.gnu.org/software/librejs/)
 
-=====
+-----
 
 If you prefer using specific tags instead of the latest version, you may specify a tag in the `jsDelivr` URL:
 
-https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.3.0/cheval.min.js
+https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.4.0/cheval.min.js
 
-=====
+-----
 
 ### Contributing:
 
@@ -152,7 +152,7 @@ If you wish to contribute to this project, pull requests are always welcome! Ple
 /*jslint browser: true*/
 ```
 
-=====
+-----
 
 Thanks to [Lea Verou](https://github.com/LeaVerou) for lots of support and help with the name.
 
