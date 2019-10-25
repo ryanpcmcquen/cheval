@@ -1,6 +1,6 @@
 # Cheval :clipboard:
 
-[![Downloads](https://img.shields.io/badge/jsDelivr-86k%2B%20downloads-green.svg?style=rounded)](https://www.jsdelivr.com/package/gh/ryanpcmcquen/cheval)
+[![Downloads](https://img.shields.io/badge/jsDelivr-88k%2B%20downloads-green.svg?style=rounded)](https://www.jsdelivr.com/package/gh/ryanpcmcquen/cheval)
 [![GitHub license](https://img.shields.io/github/license/ryanpcmcquen/cheval.svg)](https://github.com/ryanpcmcquen/cheval/blob/gh-pages/LICENSE)
 
 <img alt="Cheval glass" width="250" src="https://usercontent.irccloud-cdn.com/file/3kF3sGJE/Jekyll.and.Hyde.Ch10.Drawing2.jpg">
@@ -170,3 +170,9 @@ Thanks to BrowserStack and Koding!
          srcset="https://koding-cdn.s3.amazonaws.com/badges/made-with-koding/v1/koding_badge_RectangleColor.png 1x, https://koding-cdn.s3.amazonaws.com/badges/made-with-koding/v1/koding_badge_RectangleColor@2x.png 2x"
          alt="Made with Koding"/>
 </a>
+
+-----
+
+Full download stats available here:
+
+https://data.jsdelivr.com/v1/package/gh/ryanpcmcquen/cheval/stats?from=2014-01-01
