@@ -1,0 +1,22 @@
+{
+    "name": "cheval",
+    "version": "2.0.0",
+    "description": "Copy to the clipboard using JavaScript without writing JS.",
+    "main": "cheval.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ryanpcmcquen/cheval.git"
+    },
+    "keywords": [
+        "clipboard"
+    ],
+    "author": "Ryan McQuen",
+    "license": "MPL-2.0",
+    "bugs": {
+        "url": "https://github.com/ryanpcmcquen/cheval/issues"
+    },
+    "homepage": "https://github.com/ryanpcmcquen/cheval#readme"
+}

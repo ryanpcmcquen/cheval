@@ -17,20 +17,26 @@ Provided by:
 
 Then use the following elements:
 
-1. `<textarea>` with the class `text-to-copy` (can be `readonly` but *not* `disabled`)
+1. `<textarea>` with the class `text-to-copy` (can be `readonly` but _not_ `disabled`)
 2. `<button>` with the class `js-copy-btn`
 
 The library takes cares of the rest. :shipit:
 
 :newspaper: You don't have to write any JavaScript to use it!
 
------
+Alternatively, you can use the project with npm:
+
+```
+npm install cheval
+```
+
+---
 
 #### Featured in MarkApp!
 
 [![MarkApp](https://usercontent.irccloud-cdn.com/file/X2uIqOZA/Screen%20Shot%202017-10-17%20at%208.23.37%20AM.png)](http://markapp.io)
 
------
+---
 
 #### So what?! Where does it work?
 
@@ -38,20 +44,20 @@ Almost everywhere!
 
 Desktop:
 
-- Chrome/Chromium 42+
-- Firefox 41+
-- Internet Explorer 9+
-- Opera 29+
-- Safari 10+
+-   Chrome/Chromium 42+
+-   Firefox 41+
+-   Internet Explorer 9+
+-   Opera 29+
+-   Safari 10+
 
 Android:
 
-- Chrome 42+
-- Firefox 41+
+-   Chrome 42+
+-   Firefox 41+
 
 iOS:
 
-- 10+
+-   10+
 
 ##### What about other browsers?
 
@@ -61,7 +67,7 @@ On desktop Safari (< v10), the button will change to `Press Command + C to copy`
 
 On failure the button will say `Please copy manually`.
 
------
+---
 
 :warning: If you want your textarea to be invisible for some reason, use this CSS:
 
@@ -109,7 +115,7 @@ For example:
 
 Positioning of the elements and buttons does not matter, they do not need to be near each other on the page. This allows you to write declarative markup and not be concerned with the inner workings of this library. Enjoy!
 
------
+---
 
 #### But ...
 
@@ -120,28 +126,28 @@ You're right! That's why in version `1.3.0`, `cheval` also adds itself to global
 Now you can invoke at will on dynamic elements!
 
 ```js
-cheval(".dynamic-js-copy-btn", ".dynamic-text-to-copy");
+cheval('.dynamic-js-copy-btn', '.dynamic-text-to-copy');
 ```
 
------
+---
 
 What does `cheval` mean?
 
 The name comes from Cheval glass, a type of mirror.
 
------
+---
 
 This project is LibreJS compliant!
 
 [![LibreJS](https://www.gnu.org/software/librejs/images/logo-medium.png)](https://www.gnu.org/software/librejs/)
 
------
+---
 
 If you prefer using specific tags instead of the latest version, you may specify a tag in the `jsDelivr` URL:
 
-https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@1.4.0/cheval.min.js
+https://cdn.jsdelivr.net/gh/ryanpcmcquen/cheval@2.0.0/cheval.min.js
 
------
+---
 
 ### Contributing:
 
@@ -152,7 +158,7 @@ If you wish to contribute to this project, pull requests are always welcome! Ple
 /*jslint browser: true*/
 ```
 
------
+---
 
 Thanks to [Lea Verou](https://github.com/LeaVerou) for lots of support and help with the name.
 
@@ -171,7 +177,7 @@ Thanks to BrowserStack and Koding!
          alt="Made with Koding"/>
 </a>
 
------
+---
 
 Full download stats available here:
 
